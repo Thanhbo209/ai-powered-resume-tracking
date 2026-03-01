@@ -45,7 +45,7 @@ export default function Home() {
 
       <section className="main-section">
         <div className="page-heading py-16">
-          <h1>Track Your Applications & Resume Ratings</h1>
+          <h1>Rating Resumes & Applications To Any Company</h1>
           {!loadingResumes && resumes.length === 0 ? (
             <h2>No resumes analyzed yet. Start by uploading your resume!</h2>
           ) : (
