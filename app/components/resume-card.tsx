@@ -18,7 +18,6 @@ const ResumeCard = ({
       let url = URL.createObjectURL(blob);
       setResumeUrl(url);
     };
-
     loadResume();
   }, [imagePath]);
   return (
