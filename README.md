@@ -2,8 +2,6 @@
 
 > A modern, serverless resume management and ATS scoring app — built with React, Puter.js, and AI.
 
-🔗 [Live Demo]([https://puter.com](https://ai-powered-resume-tracking.vercel.app/)) &nbsp;|&nbsp; 🔗 [Repository](https://github.com/Thanhbo209/ai-powered-resume-tracking)
-
 ---
 
 ## 📚 Table of Contents
@@ -25,19 +23,19 @@ Authentication, file storage, and AI analysis are handled entirely through **Put
 
 ## ✨ Features
 
-🔐 **Easy & Convenient Auth** — Authentication is handled entirely in the browser via Puter.js. No accounts to set up, no backend required.
+👉 **Easy & Convenient Auth** — Authentication is handled entirely in the browser via Puter.js. No accounts to set up, no backend required.
 
-📁 **Resume Upload & Storage** — Upload and securely store all your resumes in one place using Puter's cloud file system, accessible from any device.
+👉 **Resume Upload & Storage** — Upload and securely store all your resumes in one place using Puter's cloud file system, accessible from any device.
 
-🧠 **AI Resume Matching** — Paste a job listing and get an ATS compatibility score with personalized, actionable feedback tailored to each uploaded resume.
+👉 **AI Resume Matching** — Paste a job listing and get an ATS compatibility score with personalized, actionable feedback tailored to each uploaded resume.
 
-🎨 **Reusable, Modern UI** — Built with clean, consistent components for a polished and maintainable interface.
+👉 **Reusable, Modern UI** — Built with clean, consistent components for a polished and maintainable interface.
 
-♻️ **Code Reusability** — Modular codebase and reusable components for efficient, scalable development.
+👉 **Code Reusability** — Modular codebase and reusable components for efficient, scalable development.
 
-📱 **Cross-Device Compatibility** — Fully responsive design that works seamlessly on desktop, tablet, and mobile.
+👉 **Cross-Device Compatibility** — Fully responsive design that works seamlessly on desktop, tablet, and mobile.
 
-💅 **Modern UI/UX** — Clean, responsive design built with Tailwind CSS and shadcn/ui for a sleek user experience.
+👉 **Modern UI/UX** — Clean, responsive design built with Tailwind CSS and shadcn/ui for a sleek user experience.
 
 ---
 
