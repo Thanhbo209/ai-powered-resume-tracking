@@ -1,8 +1,8 @@
-# 🤖 AI-Powered Resume Tracking
+# AI-Powered Resume Tracking
 
 > A modern, serverless resume management and ATS scoring app — built with React, Puter.js, and AI.
 
-🔗 [Live Demo](https://puter.com) &nbsp;|&nbsp; 🔗 [Repository](https://github.com/Thanhbo209/ai-powered-resume-tracking)
+🔗 [Live Demo]([https://puter.com](https://ai-powered-resume-tracking.vercel.app/)) &nbsp;|&nbsp; 🔗 [Repository](https://github.com/Thanhbo209/ai-powered-resume-tracking)
 
 ---
 
@@ -41,20 +41,20 @@ Authentication, file storage, and AI analysis are handled entirely through **Put
 
 ---
 
-## 🛠️ Tech Stack
+## ⚙️ Tech Stack
 
 | Technology | Role |
 |---|---|
-| ⚛️ **React** | UI library for building reusable, component-based interfaces |
-| 🔷 **TypeScript** | Static typing for better code quality and developer tooling |
-| ⚡ **Vite** | Fast build tool and dev server with instant HMR |
-| 🧭 **React Router v7** | Client-side routing with nested routes and data loaders |
-| ☁️ **Puter.js** | Serverless auth, file storage, and AI — all in the browser |
-| 🎨 **Tailwind CSS** | Utility-first CSS framework for rapid, responsive styling |
-| 🐻 **Zustand** | Minimal, hook-based global state management |
-| 🧩 **shadcn/ui** | Accessible, composable UI component library |
+|  **React** | UI library for building reusable, component-based interfaces |
+|  **TypeScript** | Static typing for better code quality and developer tooling |
+|  **Vite** | Fast build tool and dev server with instant HMR |
+|  **React Router v7** | Client-side routing with nested routes and data loaders |
+|  **Puter.js** | Serverless auth, file storage, and AI — all in the browser |
+|  **Tailwind CSS** | Utility-first CSS framework for rapid, responsive styling |
+|  **Zustand** | Minimal, hook-based global state management |
+|  **shadcn/ui** | Accessible, composable UI component library |
 
-### ☁️ What is Puter.js?
+###  What is Puter.js?
 
 🔗 [Puter.js](https://puter.com) is a tiny client-side SDK that brings serverless auth, cloud storage, database, and AI capabilities (GPT, Claude, DALL·E, OCR, and more) directly into your browser app — with no backend and no infrastructure costs for the developer. It powers the core functionality of this app.
 
@@ -69,32 +69,32 @@ Authentication, file storage, and AI analysis are handled entirely through **Put
 
 ### ⚙️ Installation
 
-**1. 📥 Clone the repository**
+**1.  Clone the repository**
 
 ```bash
 git clone https://github.com/Thanhbo209/ai-powered-resume-tracking.git
 cd ai-powered-resume-tracking
 ```
 
-**2. 📦 Install dependencies**
+**2.  Install dependencies**
 
 ```bash
 npm install
 ```
 
-**3. 🔥 Start the development server**
+**3.  Start the development server**
 
 ```bash
 npm run dev
 ```
 
-**4. 🌐 Open in browser**
+**4.  Open in browser**
 
 ```
 http://localhost:5173
 ```
 
-> ✅ No environment variables or backend setup required. Puter.js handles everything client-side — just run and go.
+>  No environment variables or backend setup required. Puter.js handles everything client-side — just run and go.
 
 ### 🏗️ Build for Production
 
@@ -106,4 +106,4 @@ The output will be in the `dist/` folder, ready to deploy to any static hosting 
 
 ---
 
-<p align="center">❤️ Made with React + Puter.js</p>
+<p align="center">Made with React + Puter.js</p>
