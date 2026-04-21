@@ -4,12 +4,12 @@
 
 ---
 
-## 📚 Table of Contents
+##  Table of Contents
 
-- [📖 Introduction](#introduction)
-- [✨ Features](#features)
-- [🛠️ Tech Stack](#tech-stack)
-- [🚀 Quick Start](#quick-start)
+- [ Introduction](#introduction)
+- [ Features](#features)
+- [ Tech Stack](#tech-stack)
+- [ Quick Start](#quick-start)
 
 ---
 
@@ -21,7 +21,7 @@ Authentication, file storage, and AI analysis are handled entirely through **Put
 
 ---
 
-## ✨ Features
+##  Features
 
 👉 **Easy & Convenient Auth** — Authentication is handled entirely in the browser via Puter.js. No accounts to set up, no backend required.
 
@@ -39,7 +39,7 @@ Authentication, file storage, and AI analysis are handled entirely through **Put
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 
 | Technology | Role |
 |---|---|
@@ -58,9 +58,9 @@ Authentication, file storage, and AI analysis are handled entirely through **Put
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
-### 📋 Prerequisites
+###  Prerequisites
 
 - 🔗 [Node.js](https://nodejs.org/) v18 or higher
 - 🔗 [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
@@ -94,7 +94,7 @@ http://localhost:5173
 
 >  No environment variables or backend setup required. Puter.js handles everything client-side — just run and go.
 
-### 🏗️ Build for Production
+###  Build for Production
 
 ```bash
 npm run build
