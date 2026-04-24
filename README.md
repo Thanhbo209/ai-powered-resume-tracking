@@ -110,9 +110,11 @@ The output will be in the `dist/` folder, ready to deploy to any static hosting 
 
 <img width="1898" height="902" alt="image" src="https://github.com/user-attachments/assets/217097cf-7ffa-4816-8400-d0ebd6257680" />
 
+---
 
 <img width="1903" height="910" alt="image" src="https://github.com/user-attachments/assets/08ceacf1-1449-4e44-ae47-f87a5006653a" />
 
+---
 
 <img width="1903" height="908" alt="image" src="https://github.com/user-attachments/assets/15d2e46d-5e84-461d-8cfb-97bb2296f6a4" />
 
