@@ -13,7 +13,7 @@
 
 ---
 
-## 📖 Introduction
+## Introduction
 
 **AI-Powered Resume Tracking** is a fully client-side web application that helps job seekers manage their resumes and evaluate how well each resume matches a specific job listing — all without a backend server.
 
@@ -23,19 +23,19 @@ Authentication, file storage, and AI analysis are handled entirely through **Put
 
 ##  Features
 
-👉 **Easy & Convenient Auth** — Authentication is handled entirely in the browser via Puter.js. No accounts to set up, no backend required.
+- **Easy & Convenient Auth** — Authentication is handled entirely in the browser via Puter.js. No accounts to set up, no backend required.
 
-👉 **Resume Upload & Storage** — Upload and securely store all your resumes in one place using Puter's cloud file system, accessible from any device.
+- **Resume Upload & Storage** — Upload and securely store all your resumes in one place using Puter's cloud file system, accessible from any device.
 
-👉 **AI Resume Matching** — Paste a job listing and get an ATS compatibility score with personalized, actionable feedback tailored to each uploaded resume.
+- **AI Resume Matching** — Paste a job listing and get an ATS compatibility score with personalized, actionable feedback tailored to each uploaded resume.
 
-👉 **Reusable, Modern UI** — Built with clean, consistent components for a polished and maintainable interface.
+- **Reusable, Modern UI** — Built with clean, consistent components for a polished and maintainable interface.
 
-👉 **Code Reusability** — Modular codebase and reusable components for efficient, scalable development.
+- **Code Reusability** — Modular codebase and reusable components for efficient, scalable development.
 
-👉 **Cross-Device Compatibility** — Fully responsive design that works seamlessly on desktop, tablet, and mobile.
+- **Cross-Device Compatibility** — Fully responsive design that works seamlessly on desktop, tablet, and mobile.
 
-👉 **Modern UI/UX** — Clean, responsive design built with Tailwind CSS and shadcn/ui for a sleek user experience.
+- **Modern UI/UX** — Clean, responsive design built with Tailwind CSS and shadcn/ui for a sleek user experience.
 
 ---
 
@@ -65,7 +65,7 @@ Authentication, file storage, and AI analysis are handled entirely through **Put
 - 🔗 [Node.js](https://nodejs.org/) v18 or higher
 - 🔗 [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-### ⚙️ Installation
+### Installation
 
 **1.  Clone the repository**
 
