@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import React, { createContext, useContext, useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { cn } from "~/lib/utils";
 
 interface AccordionContextType {
@@ -55,7 +56,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     <AccordionContext.Provider
       value={{ activeItems, toggleItem, isItemActive }}
     >
-      <div className={`space-y-2 ${className}`}>{children}</div>
+      <div className={`space-y-3 ${className}`}>{children}</div>
     </AccordionContext.Provider>
   );
 };
@@ -71,8 +72,19 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
   children,
   className = "",
 }) => {
+  const { isItemActive } = useAccordion();
+  const isActive = isItemActive(id);
+
   return (
-    <div className={`overflow-hidden border-b border-gray-200 ${className}`}>
+    <div
+      className={cn(
+        "glass-panel border-white/5 overflow-hidden transition-all duration-300",
+        isActive
+          ? "border-indigo-500/20 bg-slate-900/40 glow-indigo"
+          : "hover:border-white/10 hover:bg-slate-900/20",
+        className,
+      )}
+    >
       {children}
     </div>
   );
@@ -97,22 +109,14 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   const isActive = isItemActive(itemId);
 
   const defaultIcon = (
-    <svg
-      className={cn("w-5 h-5 transition-transform duration-200", {
-        "rotate-180": isActive,
-      })}
-      fill="none"
-      stroke="#98A2B3"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M19 9l-7 7-7-7"
-      />
-    </svg>
+    <ChevronDown
+      className={cn(
+        "w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0",
+        {
+          "rotate-180 text-indigo-400": isActive,
+        },
+      )}
+    />
   );
 
   const handleClick = () => {
@@ -122,16 +126,14 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   return (
     <button
       onClick={handleClick}
-      className={`
-        w-full px-4 py-3 text-left
-        focus:outline-none
-        transition-colors duration-200 flex items-center justify-between cursor-pointer
-        ${className}
-      `}
+      className={cn(
+        "w-full px-6 py-4 text-left focus:outline-none flex items-center justify-between cursor-pointer select-none transition-colors duration-200",
+        className,
+      )}
     >
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-3 w-full">
         {iconPosition === "left" && (icon || defaultIcon)}
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 w-full">{children}</div>
       </div>
       {iconPosition === "right" && (icon || defaultIcon)}
     </button>
@@ -154,13 +156,17 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({
 
   return (
     <div
-      className={`
-        overflow-hidden transition-all duration-300 ease-in-out
-        ${isActive ? "max-h-fit opacity-100" : "max-h-0 opacity-0"}
-        ${className}
-      `}
+      className={cn(
+        "grid transition-all duration-300 ease-in-out border-t border-white/5",
+        isActive
+          ? "grid-rows-[1fr] opacity-100 bg-slate-950/20"
+          : "grid-rows-[0fr] opacity-0 pointer-events-none",
+        className,
+      )}
     >
-      <div className="px-4 py-3 ">{children}</div>
+      <div className="overflow-hidden">
+        <div className="px-6 py-5 text-left">{children}</div>
+      </div>
     </div>
   );
 };

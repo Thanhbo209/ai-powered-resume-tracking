@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 declare global {
+  // declare global interface define functionalities
   interface Window {
     puter: {
       auth: {
@@ -42,7 +43,9 @@ declare global {
   }
 }
 
+// use by zustand to define store, access everywhere
 interface PuterStore {
+  requestTimestamps: number[];
   isLoading: boolean;
   error: string | null;
   puterReady: boolean;
@@ -114,6 +117,33 @@ export const usePuterStore = create<PuterStore>((set, get) => {
         getUser: get().auth.getUser,
       },
     });
+  };
+
+  const RATE_LIMIT = 5;
+  const RATE_WINDOW = 60 * 1000; // 1m
+
+  const checkRateLimit = (): boolean => {
+    const now = Date.now();
+
+    const timestamps = get().requestTimestamps.filter(
+      (ts) => now - ts < RATE_WINDOW,
+    );
+
+    if (timestamps.length >= RATE_LIMIT) {
+      set({
+        error: "Rate limit exceeded. Try again later.",
+      });
+
+      return false;
+    }
+
+    timestamps.push(now);
+
+    set({
+      requestTimestamps: timestamps,
+    });
+
+    return true;
   };
 
   const checkAuthStatus = async (): Promise<boolean> => {
@@ -316,7 +346,11 @@ export const usePuterStore = create<PuterStore>((set, get) => {
     testMode?: boolean,
     options?: PuterChatOptions,
   ) => {
+    if (!checkRateLimit()) {
+      return;
+    }
     const puter = getPuter();
+
     if (!puter) {
       setError("Puter.js not available");
       return;
@@ -412,6 +446,7 @@ export const usePuterStore = create<PuterStore>((set, get) => {
   };
 
   return {
+    requestTimestamps: [],
     isLoading: true,
     error: null,
     puterReady: false,

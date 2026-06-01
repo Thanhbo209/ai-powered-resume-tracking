@@ -1,153 +1,167 @@
-@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @theme {
-  --font-sans:
-    "Mona Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --color-dark-200: #475467;
-  --color-light-blue-100: #c1d3f81a;
-  --color-light-blue-200: #a7bff14d;
+  --font-sans: "Inter", "Mona Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Mona Sans", "Inter", sans-serif;
 
-  --color-badge-green: #d5faf1;
-  --color-badge-red: #f9e3e2;
-  --color-badge-yellow: #fceed8;
+  --color-brand-dark: #030712;
+  --color-brand-card: #0b0f19;
+  --color-brand-border: rgba(255, 255, 255, 0.08);
+  --color-brand-border-focus: rgba(99, 102, 241, 0.4);
 
-  --color-badge-green-text: #254d4a;
-  --color-badge-red-text: #752522;
-  --color-badge-yellow-text: #73321b;
+  --color-badge-green: rgba(16, 185, 129, 0.15);
+  --color-badge-red: rgba(239, 68, 68, 0.15);
+  --color-badge-yellow: rgba(245, 158, 11, 0.15);
+
+  --color-badge-green-text: #34d399;
+  --color-badge-red-text: #f87171;
+  --color-badge-yellow-text: #fbbf24;
+
+  --animate-blob-pulse: blob-pulse 12s ease-in-out infinite alternate;
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  @keyframes blob-pulse {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.15);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
 }
 
 html,
 body {
-  @apply bg-white;
+  @apply bg-brand-dark text-slate-100 antialiased min-h-screen overflow-x-hidden;
+  font-family: var(--font-sans);
 }
 
 main {
-  @apply min-h-screen pt-10;
+  @apply min-h-screen pt-28 pb-12 relative z-10;
 }
+
 h1 {
-  @apply max-sm:text-[3rem] text-6xl  text-gradient leading-tight xl:tracking-[-2px] font-semibold;
+  @apply text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight font-display;
 }
 
 h2 {
-  @apply max-sm:text-xl text-3xl text-dark-200;
+  @apply text-xl sm:text-2xl lg:text-3xl font-bold text-slate-300 tracking-tight font-display;
 }
 
-label {
-  @apply text-dark-200;
-}
-input {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
-}
-
-textarea {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
-}
-
-form {
-  @apply flex flex-col items-start gap-8 w-full;
-}
-
-@layer components {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
-  }
-  .gradient-border {
-    @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
-  }
-  .primary-button {
-    @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
-  }
-  .resume-nav {
-    @apply flex flex-row justify-between items-center p-4 border-b border-gray-200;
-  }
-  .resume-summary {
-    @apply flex flex-row items-center justify-center p-4 gap-4;
-    .category {
-      @apply flex flex-row gap-2 items-center bg-gray-50 rounded-2xl p-4 w-full justify-between;
-    }
-  }
-  .back-button {
-    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm;
-  }
-  .auth-button {
-    @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
-  }
-  .main-section {
-    @apply flex flex-col items-center gap-8 pt-12 max-sm:mx-2 mx-15 pb-5;
-  }
-  .page-heading {
-    @apply flex flex-col items-center gap-8 max-w-4xl text-center max-sm:gap-4;
-  }
-  .resumes-section {
-    @apply flex flex-wrap max-md:flex-col max-md:gap-4 gap-6 items-start max-md:items-center w-full max-w-[1850px] justify-evenly;
+/* Custom visual utilities for our premium theme */
+@layer utilities {
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 font-extrabold;
   }
 
-  .resume-card {
-    @apply flex flex-col gap-8 h-[560px] w-[350px] lg:w-[430px] xl:w-[490px] bg-white rounded-2xl p-4;
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400 font-extrabold;
   }
 
-  .resume-card-header {
-    @apply flex flex-row gap-2 justify-between min-h-[110px] max-sm:flex items-center max-md:justify-center max-md:items-center;
+  .glass-panel {
+    @apply bg-slate-900/50 backdrop-blur-xl border border-white/5 shadow-2xl shadow-black/40 rounded-2xl transition-all duration-300;
   }
 
-  .feedback-section {
-    @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
+  .glass-panel-hover {
+    @apply hover:bg-slate-900/70 hover:border-white/10 hover:shadow-indigo-500/10 hover:shadow-2xl;
   }
 
-  .navbar {
-    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+  .glass-input {
+    @apply w-full p-4 rounded-xl border border-white/5 bg-slate-950/40 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-slate-950/60 focus:ring-1 focus:ring-indigo-500/50 transition-all duration-300;
   }
 
-  .score-badge {
-    @apply flex flex-row items-center justify-center py-1 px-2 gap-4 rounded-[96px];
+  .btn-primary {
+    @apply px-6 py-3 font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 rounded-full shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all duration-300 transform active:scale-98 flex items-center justify-center gap-2 cursor-pointer;
   }
 
-  .form-div {
-    @apply flex flex-col gap-2 w-full items-start;
+  .btn-secondary {
+    @apply px-6 py-3 font-semibold text-slate-300 bg-slate-800/80 hover:bg-slate-800 border border-white/5 rounded-full shadow-md transition-all duration-300 transform active:scale-98 flex items-center justify-center gap-2 cursor-pointer;
   }
 
-  .uplader-drag-area {
-    @apply relative p-8 text-center transition-all duration-700 cursor-pointer bg-white rounded-2xl min-h-[208px];
+  .btn-danger {
+    @apply px-6 py-3 font-semibold text-white bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 rounded-full shadow-lg shadow-red-500/20 hover:shadow-red-500/30 transition-all duration-300 transform active:scale-98 flex items-center justify-center gap-2 cursor-pointer;
   }
-  .uploader-selected-file {
-    @apply flex items-center justify-between p-3 bg-gray-50 rounded-2xl;
+
+  .glow-indigo {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
   }
 }
 
-@utility bg-gradient {
-  background: linear-gradient(to bottom, #f0f4ff 60%, #fa7185cc);
+/* Custom form wrapper layout */
+.form-div {
+  @apply flex flex-col gap-2 w-full items-start;
 }
 
-@utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
+.form-div label {
+  @apply text-sm font-semibold text-slate-300 tracking-wide;
 }
 
-@utility gradient-hover {
-  @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200;
+/* Custom PDF upload zone styling */
+.uploader-drag-area {
+  @apply relative p-10 text-center transition-all duration-500 cursor-pointer bg-slate-950/30 border border-dashed border-white/10 rounded-2xl hover:border-indigo-500/50 hover:bg-indigo-500/5 min-h-[220px] flex flex-col items-center justify-center gap-4;
 }
 
-@utility primary-gradient {
-  background: linear-gradient(to bottom, #8e98ff, #606beb);
-  box-shadow: 0px 74px 21px 0px #6678ef00;
+.uploader-selected-file {
+  @apply flex items-center justify-between p-4 bg-slate-900/60 border border-white/5 rounded-xl w-full;
 }
 
-@utility primary-gradient-hover {
-  background: linear-gradient(to bottom, #717dff, #4957eb);
+/* Floating custom premium Navbar */
+.navbar {
+  @apply fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1200px] bg-slate-950/40 backdrop-blur-xl border border-white/5 rounded-full p-3 px-8 z-50 flex items-center justify-between shadow-2xl shadow-black/50 transition-all duration-300;
 }
 
-@utility inset-shadow {
-  box-shadow: inset 0 0 12px 0 rgba(36, 99, 235, 0.2);
-  backdrop-filter: blur(10px);
+/* Sections */
+.main-section {
+  @apply flex flex-col items-center gap-12 pt-6 px-4 md:px-8 max-w-7xl mx-auto w-full;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.page-heading {
+  @apply flex flex-col items-center gap-4 text-center max-w-3xl;
+}
+
+.resumes-section {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mt-6;
+}
+
+/* Card representation */
+.resume-card {
+  @apply flex flex-col gap-6 bg-slate-900/30 border border-white/5 rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1.5 hover:border-indigo-500/30 shadow-xl hover:shadow-2xl hover:shadow-indigo-500/5 hover:bg-slate-900/40 cursor-pointer;
+}
+
+.resume-card-header {
+  @apply flex items-start justify-between gap-4 border-b border-white/5 pb-4;
+}
+
+/* Layout section for split pane report views */
+.feedback-section {
+  @apply flex flex-col gap-8 w-full lg:w-1/2 p-6 md:p-8;
+}
+
+.resume-nav {
+  @apply flex items-center p-4 px-8 border-b border-white/5 bg-slate-950/20 backdrop-blur-md sticky top-0 z-40;
+}
+
+.back-button {
+  @apply flex items-center gap-2 border border-white/5 bg-slate-900/50 hover:bg-slate-900 text-slate-300 rounded-lg p-2.5 px-4 text-sm font-semibold shadow-sm transition-all active:scale-95 cursor-pointer;
+}
+
+/* Accordions */
+.resume-summary {
+  @apply flex flex-col gap-4 p-4;
+}
+
+.resume-summary .category {
+  @apply flex items-center justify-between bg-slate-950/40 border border-white/5 rounded-xl p-4 w-full transition-all hover:bg-slate-950/60;
 }
